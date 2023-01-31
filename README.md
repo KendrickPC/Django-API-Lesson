@@ -54,7 +54,7 @@ Basically, we would use Docker if we are looking to streamline our workflow and 
 1. Install GIT for your terminal. Check with git --version
 2. [Install VirtualBox for your OS/Chipset](https://www.virtualbox.org/wiki/Downloads) Check by opening up VirtualBox with Spotlight. We should see the app open up.
 3. [Install Vagrant](https://developer.hashicorp.com/vagrant/downloads) Test in terminal with vagrant --version
-4. Install VSCode or Atom.
+4. Install VSCode (or your preferred IDE).
 5. Install ModHeader Chrome Extension (used to test API as we build it) [ModHeader Chrome Extension](https://chrome.google.com/webstore/detail/modheader-modify-http-hea/idgpnmonknjnojddfkpgkljpfnnfcklj) Check the ModHeader Chrome Browser extension after installing. Pin it.
 
 ### Setting Up Project
@@ -64,4 +64,52 @@ Basically, we would use Docker if we are looking to streamline our workflow and 
 touch LICENSE
 ```
 Paste the contents of [MIT LICENSE TEMPLATE](https://choosealicense.com/licenses/mit/) and change year and name appropriately.
+
+### Creating a Development Server
+1. Create a template Vagrantfile
+
+In our profiles-rest-api folder directory inside terminal:
+```console
+vagrant init ubuntu/bionic64
+```
+
+2. Configure Vagrant box
+Inside Vagrantfile, create a customized Vagrantfile by replacing ALL of the template Vagrantfile settings.
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+ # The most common configuration options are documented and commented below.
+ # For a complete reference, please see the online documentation at
+ # https://docs.vagrantup.com.
+
+ # Every Vagrant development environment requires a box. You can search for
+ # boxes at https://vagrantcloud.com/search.
+ config.vm.box = "ubuntu/bionic64"
+ config.vm.box_version = "~> 20200304.0.0"
+
+ config.vm.network "forwarded_port", guest: 8000, host: 8000
+
+ config.vm.provision "shell", inline: <<-SHELL
+   systemctl disable apt-daily.service
+   systemctl disable apt-daily.timer
+ 
+   sudo apt-get update
+   sudo apt-get install -y python3-venv zip
+
+   touch /home/vagrant/.bash_aliases
+   if ! grep -q PYTHON_ALIAS_ADDED /home/vagrant/.bash_aliases; then
+     echo "# PYTHON_ALIAS_ADDED" >> /home/vagrant/.bash_aliases
+     echo "alias python='python3'" >> /home/vagrant/.bash_aliases
+   fi
+ SHELL
+end
+```
+
+### Running and Connecting to Our Dev Server
 
