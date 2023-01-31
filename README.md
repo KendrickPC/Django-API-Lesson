@@ -49,3 +49,11 @@ Benefits of Vagrant:
 - [x] Runs on any machine that supports Virtualbox
 
 Basically, we would use Docker if we are looking to streamline our workflow and ALL developers use supported OS. Vagrant is preferred if we're just getting started or if we need support on a wider range of OS.
+
+### Installing Virtualbox, Vagrant, and ModHeader for MAC OS
+1. Install GIT for your terminal. Check with git --version
+2. [Install VirtualBox for your OS/Chipset](https://www.virtualbox.org/wiki/Downloads) Check by opening up VirtualBox with Spotlight. We should see the app open up.
+3. [Install Vagrant](https://developer.hashicorp.com/vagrant/downloads) Test in terminal with vagrant --version
+4. Install VSCode or Atom.
+5. Install ModHeader Chrome Extension (used to test API as we build it) [ModHeader Chrome Extension](https://chrome.google.com/webstore/detail/modheader-modify-http-hea/idgpnmonknjnojddfkpgkljpfnnfcklj) Check the ModHeader Chrome Browser extension after installing. Pin it.
+
