@@ -1,8 +1,10 @@
 # Django REST API
 
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+##### Technologies Used:
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
 ![Vagrant](https://img.shields.io/badge/vagrant-%231563FF.svg?style=for-the-badge&logo=vagrant&logoColor=white)<img src="https://img.shields.io/badge/virtualbox-%23183A61.svg?&style=for-the-badge&logo=virtualbox&logoColor=white" />
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ### 12 Step Plan:
 1. Setting up dev environment
@@ -18,3 +20,32 @@
 11. Create profile feed API
 12. Deploy API to server on AWS
 
+#### Docker VS. Vagrant
+
+Both use virtualization technolgoy to isolate app from machine, but do it in different ways.
+
+**What is Docker?**
+- [x] Open source containerization tool
+- [x] Run app in light-weight image
+
+Creates a Dockerfile that contains all the steps required to build the image. An image is a lightweight version of Linux OS. Once we have the image, we can run on our local machine or deploy it to a server.
+
+Limitations of Docker:
+
+- [x] Because Dockers is designed to run in PRODUCTION, it has a steeper learning curve compared to Vagrant.
+- [x] Limited versions for Windows Home
+
+**What is Vagrant?**
+- [x] Manage virtual development environments
+- [x] No "out-of-the-box" virtualization technology
+
+Vagrant uses a Hypervisor (i.e. Virtualbox) to create a Vagrantfile. Vagrant uses the Hypervisor to create and configure the server on our machine.
+
+Benefits of Vagrant:
+
+- [x] Streamlined but complete version of Linux OS
+- [x] Because Vagrant is not designed to run in production, it has an easier learning curve compared to Docker
+- [x] Wider range of support
+- [x] Runs on any machine that supports Virtualbox
+
+Basically, we would use Docker if we are looking to streamline our workflow and ALL developers use supported OS. Vagrant is preferred if we're just getting started or if we need support on a wider range of OS.
