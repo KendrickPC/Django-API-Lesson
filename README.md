@@ -59,3 +59,9 @@ Basically, we would use Docker if we are looking to streamline our workflow and 
 
 ### Setting Up Project
 1. Add template .gitignore files for standard Python Vagrant project [.gitignore template](https://www.toptal.com/developers/gitignore/api/python,vagrant)
+2. Create a LICENSE file in root directory of project
+```console
+touch LICENSE
+```
+Paste the contents of [MIT LICENSE TEMPLATE](https://choosealicense.com/licenses/mit/) and change year and name appropriately.
+
