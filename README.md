@@ -57,3 +57,5 @@ Basically, we would use Docker if we are looking to streamline our workflow and 
 4. Install VSCode or Atom.
 5. Install ModHeader Chrome Extension (used to test API as we build it) [ModHeader Chrome Extension](https://chrome.google.com/webstore/detail/modheader-modify-http-hea/idgpnmonknjnojddfkpgkljpfnnfcklj) Check the ModHeader Chrome Browser extension after installing. Pin it.
 
+### Setting Up Project
+1. Add template .gitignore files for standard Python Vagrant project [.gitignore template](https://www.toptal.com/developers/gitignore/api/python,vagrant)
